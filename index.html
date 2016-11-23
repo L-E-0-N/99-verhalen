@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transavia Verhalen</title>
+</head>
+
+<body>
+    <nav>
+        <div id="logo"></div>
+        <h4>Transavia verhalen</h4>
+        <!-- h4 = Logo tekst -->
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="lijst.html">Mijn lijst</a>
+                <li><a href="account.html">Account</a>
+        </ul>
+    </nav>
+    <header>
+        <h1>Wat wil je lezen?</h1>
+        <input type="search" name="zoeken" placeholder="Zoeken..">
+    </header>
+    <aside>
+        <div class="filter">
+            <h5>Genre</h5>
+            <!-- h5 = Filteroptie titel -->
+            <!-- Voor Javascript te activeren met de input checkboxes: http://stackoverflow.com/questions/3197702/html-checkbox-onclick-called-in-javascript
+            
+            http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_button-->
+            <ul>
+                <li>
+                    <input type="checkbox" name="genrefictie">Fictie</li>
+                <li>
+                    <input type="checkbox" name="genrenonfictie">Non-fictie</li>
+                <li>
+                    <input type="checkbox" name="genrepolitiek">Politiek</li>
+                <li>
+                    <input type="checkbox" name="genrereligie">Religie</li>
+                <li>
+                    <input type="checkbox" name="genremedia">Media</li>
+                <li>
+                    <input type="checkbox" name="genresport">Sport</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Thema</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" name="themakeuzeredactie">Keuze van de redeactie</li>
+                <li>
+                    <input type="checkbox" name="themaverkiezingen">Verkiezingen</li>
+                <li>
+                    <input type="checkbox" name="themasinterklaas">Sinterklaas</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Niveau</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" name="niveaukinderen">Verhalen voor kinderen</li>
+                <li>
+                    <input type="checkbox" name="niveaujeugd">Verhalen voor de jeugd</li>
+                <li>
+                    <input type="checkbox" name="niveauvolwassenen">Verhalen voor volwassenen</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Duur</h5>
+            <ul>
+                <li>
+                    <input type="range" name="duur" value="3" min="0" max="3">
+                </li>
+                <!-- http://jsfiddle.net/DB98s/55/ Om met java de waarde te tonen -->
+                <!-- Waardes:   0 = 5 min of korter
+                                    1 = 10 min of korter
+                                    2 = 15 min of korter
+                                    3 = Alles -->
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <h2>Keuze redactie</h2>
+        <article class="keuzeredactie">
+            <h3>Stijloefening (99) - Verrassing</h3>
+            <div class="datum"></div>
+            <p>Tekst</p>
+            <button>Lees meer</button>
+            <div class="waardering"></div>
+        </article>
+        <h2>Aanbevolen</h2>
+        <article>
+            <h3>Stijloefening (98) - Verrassing</h3>
+            <div class="datum"></div>
+            <p>Tekst</p>
+            <button>Lees meer</button>
+            <div class="waardering"></div>
+        </article>
+        <!-- Hieronder komen meer verhalen (infinite loading of pagination) -->
+    </main>
+    <footer>
+        <p>© Transavia verhalen - 2016</p>
+    </footer>
+</body>
+
+</html>

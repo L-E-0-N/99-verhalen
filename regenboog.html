@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transavia Verhalen</title>
+</head>
+
+<body>
+    <nav>
+        <div id="logo"></div>
+        <h4>Transavia verhalen</h4>
+        <!-- h4 = Logo tekst -->
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="lijst.html">Mijn lijst</a>
+                <li><a href="account.html">Account</a>
+        </ul>
+    </nav>
+    <header>
+        <h1>Wat wil je lezen?</h1>
+        <input type="search" name="zoeken" placeholder="Zoeken..">
+    </header>
+    <aside>
+        <div class="filter">
+            <h5>Genre</h5>
+            <!-- h5 = Filteroptie titel -->
+            <ul>
+                <li>
+                    <input type="checkbox" name="genrefictie">Fictie</li>
+                <li>
+                    <input type="checkbox" name="genrenonfictie">Non-fictie</li>
+                <li>
+                    <input type="checkbox" name="genrepolitiek">Politiek</li>
+                <li>
+                    <input type="checkbox" name="genrereligie">Religie</li>
+                <li>
+                    <input type="checkbox" name="genremedia">Media</li>
+                <li>
+                    <input type="checkbox" name="genresport">Sport</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Thema</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" name="themakeuzeredactie">Keuze van de redeactie</li>
+                <li>
+                    <input type="checkbox" name="themaverkiezingen">Verkiezingen</li>
+                <li>
+                    <input type="checkbox" name="themasinterklaas">Sinterklaas</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Niveau</h5>
+            <ul>
+                <li>
+                	<input type="checkbox" name="niveaukinderen">Verhalen voor kinderen</li>
+                <li>
+                    <input type="checkbox" name="niveaujeugd">Verhalen voor de jeugd</li>
+                <li>
+                    <input type="checkbox" name="niveauvolwassenen">Verhalen voor volwassenen</li>
+            </ul>
+        </div>
+        <div class="filter">
+            <h5>Duur</h5>
+            <ul>
+                <li>
+                    <input type="range" name="duur" value="3" min="0" max="3">
+                </li>
+                <!-- http://jsfiddle.net/DB98s/55/ Om met java de waarde te tonen -->
+                <!-- Waardes:   0 = 5 min of korter
+                                    1 = 10 min of korter
+                                    2 = 15 min of korter
+                                    3 = Alles -->
+            </ul>
+        </div>
+    </aside>
+    <main>
+    	<article>
+	        <h1 class="titel">Regenboog</h1>
+	        <p class="genre">Genre: <a href="">Fictie</a></p>
+	        <address>
+	        	<p class="auteur">Auteur: Molovich</p>
+				<p class="datum">Gepubliceerd op: 15 februari 2011</p>
+				<p class="waardering">Waardering hier</p>
+				<a href="">Opslaan in je lijst</a>
+				<p class="duur">5 min</p>
+	        </address>
+			
+			<p class="intro">Bus 21. Ik stap uit. Het is een gure dag, geen ultraviolette zonnestralen die het tere huidje van mijn zoontje aantasten. Hij ligt te slapen in z’n paarse kinderwagen. De reizigers lopen van en naar CS. Ik ga naar de Openbare Bibliotheek om Stijloefeningen van Raymond Queneau te lenen. Amsterdam is één grote bouwput hier. Ik moet over planken lopen. Een groep Japanners passeert me. Ze dragen allemaal zo’n driehoekige, blauwe doos met daarin een poster van Van Gogh.</p>
+
+			<img src="" alt="afbeelding">
+
+			<p>Voor ik de bibliotheek in ga, wordt ik aangesproken door een vrouw met zwarte krullen. Of dit het postkantoor is. Nee, zeg ik, daarvoor moet u naar de Raadhuisstraat. Ze draait zich om en rent achter een groene Renault 21 aan.</p>
+
+			<p>Boven zoek ik tevergeefs naar Stijloefeningen. Het boek ligt niet waar het hoort te liggen. Ik kijk op de computer. Daar staat dat het boek wel degelijk aanwezig moet zijn. Ik vraag het aan een medewerker, wiens ongezonde voorkomen doet vermoeden dat hij een lichte vorm van geelzucht onder de leden heeft. De medewerker kijkt met mij mee, maar moet tot zijn spijt constateren dat het boek inderdaad niet aanwezig is. Hij zegt dat ik een mailtje naar het magazijn moet sturen. Die hebben nog een exemplaar. Hij veegt wat zweet van zijn voorhoofd af met een oranje zakdoek. Ik mail. Tien minuten later krijg ik het mailtje terug. Het boek moet op de tweede verdieping aanwezig zijn. Rood aangelopen verlaat ik de bibliotheek.</p>
+
+			<p>Op het Bos en Lommerplein, vlakbij mijn woning, koop ik schoenen voor mijn zoontje. Infrarode stralen scannen de streepjescode: 10 % korting. Het kan mij maar in beperkte mate opbeuren.</p>
+		</article>
+		<h2>Reacties</h2>
+		<div class="reactiecontainer">
+			<address>
+	        	<p class="reaguurder">Leon van Zijl</p>
+				<p class="datum">Gereageerd op: 16 februari 2016</p>
+        	</address>
+        	<p class="reactie">Reactie hier</p>
+		</div>
+		<form> <!-- Animatied voor foutmeldingen https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
+            <h2>Reactie toevoegen</h2>
+            <p>
+                <label>Naam *</label>
+                <input  type="text"
+                        name="naam"
+                        placeholder="Naam"
+                        pattern="[A-Za-z]+"
+                        minlength="2"
+                        title="Twee or meer karakters"
+                        required>
+            </p>
+            <p>
+                <label>E-mailadres *</label>
+                <input  type="email"
+                        name="email"
+                        placeholder="E-mailadres"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                        required>
+            </p>
+            <textarea 	name="reactie"
+            			placeholder="Plaats je reactie"
+            			cols="60" rows="10"
+            			required></textarea>
+            <p>* Deze velden zijn verplicht.</p>
+            <p>
+                <input type="submit" name="reactieplaatsen" value="Reactie plaatsen" />
+            </p>
+        </form>
+    </main>
+    <section>
+        <h2>Interessante verhalen</h2>
+        <article>
+            <h3>Stijloefening (98) - Verrassing (Links uitgelijnd)</h3>
+            <div class="datum"></div>
+            <p>Tekst</p>
+            <button>Lees meer</button>
+            <div class="waardering"></div>
+        </article>
+        <article>
+            <h3>Stijloefening (98) - Verrassing (Rechts uitgelijnd)</h3>
+            <div class="datum"></div>
+            <p>Tekst</p>
+            <button>Lees meer</button>
+            <div class="waardering"></div>
+        </article>
+    </section>
+    <footer>
+        <p>© Transavia verhalen - 2016</p>
+    </footer>
+</body>
+
+</html>
