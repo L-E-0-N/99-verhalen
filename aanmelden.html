@@ -1,156 +1,100 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="utf-8">
-    <title>Inloggen op Transavia verhalen</title>
+    <title>Aanmelden bij Transavia verhalen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <nav>
-        <div id="logo"></div>
-        <h4>Transavia verhalen</h4>
-        <!-- h4 = Logo tekst -->
+        <a href="index.html">
+            <div id="logo"></div>
+        </a>
+        <div id="menumobiel"> </div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lijst.html">Mijn lijst</a>
-                <li><a href="account.html">Account</a>
+            <li class="homemobiel active">Home</li>
+            <li><a href="lijst.html">Mijn lijst</a></li>
+            <li><a href="account.html">Profiel</a></li>
         </ul>
+        <div id="profielicoon"></div>
+        <div id="zoekenmobiel"></div>
     </nav>
-    <header>
-        <h1>Meld je aan op Transavia verhalen.</h1>
+    <header class="headeraanmelden">
+        <div id="headercontaineraanmelden">
+            <h1></h1>
+            <main class="mainaanmelden">
+                <form class="formaanmelden">
+                    <!-- Animatied voor foutmeldingen https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
+                    <fieldset class="fieldsetaanmelden">
+                        <legend>Persoonsgegevens</legend>
+                        <label for="voornaam">Voornaam *</label>
+                        <input type="text" name="voornaam" id="voornaam" placeholder="Voornaam" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" autofocus required>
+                        <label for="tussenvoegsel">Tussenvoegsel</label>
+                        <input type="text" name="tussenvoegsel" id="tussenvoegsel" placeholder="Tussenvoegsel" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters">
+                        <label for="achternaam">Achternaam *</label>
+                        <input type="text" name="achternaam" id="achternaam" placeholder="Achternaam" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" required>
+                        <!-- <label for="geboortedatum">Geboortedatum *</label>
+                        <input type="date" name="geboortedatum" id="geboortedatum" max="2012-01-01" title="01/01/1990" required> -->
+                        <!-- Werkt niet op FF en IE 11 of ouder -->
+                        <label for="telefoonnummer">Telefoonnummer *</label>
+                        <input type="tel" name="telefoonnummer" id="telefoonnummer" placeholder="0612345678" pattern="[0-9]+" minlength="8" maxlength="10" title="Aan elkaar. Tussen de 8 en 10 cijfers" required>
+                        <label for="email">E-mailadres *</label>
+                        <input type="email" name="email" id="email" placeholder="E-mailadres" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+                        <p class="verplicht">* Deze velden zijn verplicht.</p>
+                    </fieldset>
+                    <fieldset class="fieldsetaanmelden fieldsetaanmeldentwee">
+                        <legend>Adres</legend>
+                        <label for="postcode">Postcode *</label>
+                        <input type="text" name="postcode" id="postcode" placeholder="1234AB" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
+                        <label for="straat">Straat *</label>
+                        <input type="text" name="straat" id="straat" placeholder="Straat" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" required>
+                        <label for="huisnummer">Huisnummer *</label>
+                        <input type="number" name="huisnummer" id="huisnummer" placeholder="Huisnummer" min="1" required>
+                        <label for="toevoeging">Toevoeging</label>
+                        <input type="text" name="toevoeging" id="toevoeging" placeholder="Toevoeging" pattern="[A-Za-z]+" maxlength="2" title="Bijvoorbeeld: 14c">
+                        <label for="wachtwoord">Wachtwoord *</label>
+                        <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord" pattern=".{5,}" title="Vijf or meer karakters" required>
+                        <input type="submit" name="aanmelden" id="aanmelden" value="Aanmelden" />
+                        <p class="verplichtmobiel">* Deze velden zijn verplicht.</p>
+                    </fieldset>
+                    
+                    
+                </form>
+            </main>
+        </div>
     </header>
-    <main>
-        <div></div>
-        <form> <!-- Animatied voor foutmeldingen https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
-            <h2>Aanmelden</h2>
-            <p>
-                <label>Voornaam *</label>
-                <input  type="text"
-                        name="voornaam"
-                        placeholder="Voornaam"
-                        pattern="[A-Za-z]+"
-                        minlength="2"
-                        title="Twee or meer karakters"
-                        autofocus
-                        required>
-            </p>
-            <p>
-                <label>Tussenvoegsel</label>
-                <input  type="text"
-                        name="tussenvoegsel"
-                        placeholder="Tussenvoegsel"
-                        pattern="[A-Za-z]+"
-                        minlength="2"
-                        title="Twee or meer karakters">
-            </p>
-            <p>
-                <label>Achternaam *</label>
-                <input  type="text"
-                        name="achternaam"
-                        placeholder="Achternaam"
-                        pattern="[A-Za-z]+"
-                        minlength="2"
-                        title="Twee or meer karakters"
-                        required>
-            </p>
-            <p>
-                <label>Geboortedatum *</label>
-                <input  type="date"
-                        name="geboortedatum"
-                        max="2012-01-01"
-                        title="01/01/1990"
-                        required>
-                <!-- Werkt niet op FF en IE 11 of ouder -->
-            </p>
-            <p>
-                <label>Telefoonnummer *</label>
-                <input  type="tel"
-                        name="telefoonnummer"
-                        placeholder="0612345678"
-                        pattern="[0-9]+"
-                        minlength="8"
-                        maxlength="10"
-                        title="Aan elkaar. Tussen de 8 en 10 cijfers"
-                        required>
-            </p>
-            <p>
-                <label>Postcode *</label>
-                <input  type="text"
-                        name="postcode"
-                        placeholder="1234AB"
-                        pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}"
-                        required>
-            </p>
-            <p>
-                <label>Straat *</label>
-                <input  type="text"
-                        name="straat"
-                        placeholder="Straat"
-                        pattern="[A-Za-z]+"
-                        minlength="2"
-                        title="Twee or meer karakters"
-                        required>
-            </p>
-            <p>
-                <label>Huisnummer *</label>
-                <input  type="number"
-                        name="huisnummer"
-                        placeholder="Huisnummer"
-                        min="1"
-                        required>
-            </p>
-            <p>
-                <label>Toevoeging</label>
-                <input  type="text"
-                        name="toevoeging"
-                        placeholder="Toevoeging"
-                        pattern="[A-Za-z]+"
-                        maxlength="2"
-                        title="Bijvoorbeeld: 14c">
-            </p>
-            <p>
-                <label>E-mailadres *</label>
-                <input  type="email"
-                        name="email"
-                        placeholder="E-mailadres"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                        required>
-            </p>
-            <p>
-                <label>Wachtwoord *</label>
-                <input  type="password"
-                        name="wachtwoord"
-                        placeholder="Wachtwoord"
-                        pattern=".{5,}"
-                        title="Vijf or meer karakters"
-                        required>
-            </p>
-            <p>* Deze velden zijn verplicht.</p>
-            <p>
-                <input type="submit" name="aanmelden" value="Aanmelden" />
-            </p>
-        </form>
-    </main>
-    <section>
-        <h2>Interessante verhalen</h2>
-        <article>
-            <h3>Stijloefening (98) - Verrassing (Links uitgelijnd)</h3>
-            <div class="datum"></div>
-            <p>Tekst</p>
-            <button>Lees meer</button>
-            <div class="waardering"></div>
-        </article>
-        <article>
-            <h3>Stijloefening (98) - Verrassing (Rechts uitgelijnd)</h3>
-            <div class="datum"></div>
-            <p>Tekst</p>
-            <button>Lees meer</button>
-            <div class="waardering"></div>
-        </article>
+    <section class="sectionaanmelden">
+        <div id="maincontainer">
+            <h3>Interessante verhalen</h3>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Blind</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button class="leesmeeraanmelden">Aanmelden</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Blind</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button class="leesmeeraanmelden">Aanmelden</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+        </div>
     </section>
     <footer>
-        <p>© Transavia verhalen - 2016</p>
+        © Transavia Verhalen - 2016
     </footer>
 </body>
 

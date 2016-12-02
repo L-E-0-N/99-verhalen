@@ -1,0 +1,1092 @@
+/*
+=================================
+	ALGEMEEN
+=================================
+*/
+
+* {
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	background: #F0F0F0;
+}
+
+body {
+	background: #FFFFFF;
+	margin: 0;
+}
+
+h2 {
+	font-family: "nexa_heavy";
+	font-size: 2.375em;
+}
+
+h3 {
+	font-family: "nexa_book";
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+p {
+	font-family: "nexa_book";
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+/*
+=================================
+	FONTS
+=================================
+*/
+
+@font-face {
+	font-family: "transavia_icon";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/transavicon-webfont.woff2") format("woff2"),
+	url("../fonts/transavicon-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_book";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_book-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_book-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_xbold";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_xbold-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_xbold-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_black";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_black-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_black-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_heavy";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_heavy-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_heavy-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_regular";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_regular-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_regular-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_bold";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_bold-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_bold-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "nexa_light";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/nexa_light-webfont.woff2") format("woff2"),
+	url("../fonts/nexa_light-webfont.woff") format("woff");
+}
+
+/*
+=================================
+	NAVBAR
+=================================
+*/
+
+nav {
+	background: #FFFFFF;
+	box-shadow: 0 0.125em 0.3125em rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	display: flex;
+	height: 4.375em; /* 70/16 */
+	justify-content: space-between;
+	position: relative;
+	width: 100vw;
+	z-index: 1;
+}
+
+nav a {
+	color: #00D66C;
+	text-decoration: none;
+	transition: color 300ms;
+}
+
+nav a:hover {
+	color: #2800A0;
+}
+
+.active {
+	color: #2800A0;
+}
+
+#logo {
+	background: url(../images/transavia_logo.svg);
+	background-repeat: no-repeat;
+	background-position: 0% center;
+	height: 2em; /* 32/16 */
+	margin: 1.1875em 0 1.1875em 1.1875em; /* 19/16 */
+	width: 10.8125em; /* 173/16 */
+}
+
+#menumobiel, #zoekenmobiel {
+	height: 2.083333333333333em;
+	width: 2.083333333333333em;
+	padding-top: 0.5em;
+	box-sizing: border-box;
+	font-family: 'transavicon';
+	color: #00D66C;
+	text-align: center;
+	font-size: 1.5em;
+	display: none;
+	transition: color 300ms;
+	cursor: pointer;
+}
+
+nav ul {
+	align-self: flex-end;
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	margin: 1.3em 0 1.3em auto; /* 23/16 */
+	padding: 0;
+	width: 18.25em; /* 292/16 */
+}
+
+nav li {
+	float: left;
+	font-family: "nexa_bold";
+	font-size: 1.25em; /* 20/16 */
+}
+
+#profielicoon {
+	background: url(../images/profiel_leeg.svg);
+	height: 2.125em; /* 34/16 */
+	margin: 1.125em; /* 18/16 */ /* 18/16 */ /* 18/16 */
+	width: 2.125em; /* 34/16 */
+}
+
+/*
+=================================
+	ZOEKBALK
+=================================
+*/
+
+header {
+	align-items: center;
+	background: #00D66C;
+	display: flex;
+	height: 12.5em; /* 200/16 */
+	justify-content: center;
+	width: 100vw;
+}
+
+.headeraanmelden {
+	background: #EEDAC8;
+	height: auto;
+	padding: 3.125em 0; /* 50/16 */
+}
+
+#headercontaineraanmelden {
+	box-sizing: border-box;
+	max-width: 60em; /* 960/16 */
+	width: 100%;
+}
+
+.mainaanmelden {
+	max-width: 60em; /* 960/16 */
+	width: 100%;
+	background: #fff;
+	height: auto;
+	border-radius: 0.3125em; /* 5/16 */
+	box-shadow: 0 0.1875em 0.125em 0 rgba(0,0,0,0.10); /* 3/16 */ /* 2/16 */
+}
+
+.headeraanmelden h1 {
+	margin-bottom: 0.5em;
+}
+
+.headeraanmelden h1:before {
+	content: 'Meld je aan op Transavia verhalen';
+}
+
+.formaanmelden {
+	max-width: 60em; /* 960/16 */
+	width: 100%;
+	padding: 3.125em; /* 50/16 */
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.formaanmelden legend {
+	font-family: "nexa_book";
+	font-size: 1.5em;
+	font-weight: normal;
+	color: #FF3268;
+	float: left;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.formaanmelden label {
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	margin: 1.1111111111111112em 0 0.5555555555555556em 0;
+	display: block;
+}
+
+.formaanmelden input {
+	display: block;
+	height: 1.875em; /* 30/16 */
+	background: rgba(247,247,247,0.70);
+	border: 1px solid rgba(208,206,214,0.50);
+	border-radius: 0.3125em; /* 5/16 */
+	font-family: "nexa_book";
+	padding-left: 0.3125em; /* 5/16 */
+	font-size: 1em;
+	width: 20em;
+	box-sizing: border-box;
+}
+
+.fieldsetaanmelden {
+	border: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+#headercontainer {
+	box-sizing: border-box;
+	max-width: 60em; /* 960/16 */
+	width: 100%;
+}
+
+header h1 {
+	color: #FFFFFF;
+	font-family: "nexa_bold";
+	font-size: 3em; /* 48/16 */
+	margin: 0;
+}
+
+#aanmelden {
+	align-self: flex-start;
+	width: auto;
+	height: 1.6666666666666665em;
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	border-radius: 0.8333333333333333em;
+	padding: 0 1em;
+	background: #FF3268;
+	box-shadow: inset 0 -0.1875em 0.0625em #CA2B55;
+	color: #fff;
+	border: none;
+	margin: 1em 0 0 0;
+}
+
+#aanmelden:hover {
+	background: #FF658E;
+	transition: background 200ms;
+}
+
+.verplicht, .verplichtmobiel {
+	margin: 1.2em 0 0 0;
+	color: #2800A0;
+}
+
+.verplichtmobiel {
+	display: none;
+}
+
+/*
+=================================
+	ZOEKBALK - SELECT2 PLUG-IN
+=================================
+*/
+
+.select2 {
+	height: 3.125em !important; /* 50/16 */
+	margin-top: 0.625em; /* 10/16 */
+}
+
+.select2-selection {
+	align-items: center;
+	border: none !important;
+	border-radius: 6.25em !important; /* 100/16 */
+	box-sizing: border-box !important;
+	display: flex !important;
+	font-family: "nexa_bold";
+	height: 3.125em; /* 50/16 */
+	padding-right: 3.75em !important;
+}
+
+.select2-selection__rendered {
+	align-items: center !important;
+	border-radius: 1.5625em !important; /* 25/16 */
+	display: flex !important;
+	height: 3.125em !important; /* 50/16 */
+	overflow-x: scroll !important;
+	padding-bottom: 0.3125em !important; /* 5/16 */
+	padding-left: 0.625em !important; /* 10/16 */
+}
+
+.select2-selection__choice {
+	background: red !important;
+	border: none !important;
+	border-radius: 0.9375em !important; /* 15/16 */
+	color: #FFFFFF !important;
+	font-size: 1.125em;
+	height: 1.6666666666666665em !important;
+	line-height: 1.722222222222222em !important;
+	margin-right: 0.5555555555555556em !important;
+	padding: 0 0.8333333333333333em !important;
+	text-transform: capitalize !important;
+}
+
+.select2-selection__choice:nth-child(3n+1) {
+	background: #FF3268 !important;
+}
+
+.select2-selection__choice:nth-child(3n+2) {
+	background: #00D66C !important;
+}
+
+.select2-selection__choice:nth-child(3n+3) {
+	background: #2800A0 !important;
+}
+
+.select2-selection__choice__remove {
+	color: #FFFFFF !important;
+	font-family: "nexa_light";
+	margin-right: 0.3125em !important; /* 5/16 */
+}
+
+.select2-selection__clear {
+	border-radius: 5.625em !important;
+	font-family: "nexa_light";
+	font-size: 2.5em; /* 40/16 */
+	margin-left: auto !important;
+	margin-right: 0 !important;
+	margin-top: 0.08em !important;
+	order: 2 !important;
+	padding-left: 0.5em;
+	position: absolute;
+	right: 0;
+	width: 1em !important;
+}
+
+.select2-search__field {
+	font-family: "nexa_bold";
+	width: 6.25em !important; /* 100/16 */
+}
+
+.select2-results, .select2-selection, .select2-dropdown {
+	display: none;
+}
+
+/*
+=================================
+	SUGGESTIEBALK
+=================================
+*/
+
+aside {
+	background: #FFFFFF;
+	display: flex;
+	height: 3.125em; /* 50/16 */
+	justify-content: center;
+	width: 100vw;
+}
+
+form {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0.625em 0; /* 10/16 */
+	width: 60em; /* 960/16 */
+}
+
+/*
+=================================
+	FILTEROPTIE - GENRE
+=================================
+*/
+
+/* Fieldset van genre */
+#genrefilteroptie {
+	background: #00D66C;
+	box-shadow: inset 0 -0.1875rem 0.0625rem #1E9162;
+}
+
+#genrefiltertrigger:hover {
+	background: #4DE298;
+	transition: background 200ms;
+}
+
+/* Icoon van Legend */
+#genrefiltertrigger > span {
+	font-family: "transavicon";
+	margin-left: auto; /* Zelfde als float: right; maar dan met flexbox */
+}
+
+/*
+=================================
+	FILTEROPTIE - THEMA
+=================================
+*/
+
+/* Fieldset van genre */
+#themafilteroptie {
+	background: #2800A0;
+	box-shadow: inset 0 -0.1875em 0.0625em #120145;
+}
+
+#themafiltertrigger:hover {
+	background: #5E40B8;
+	transition: background 200ms;
+}
+
+/* Icoon van Legend */
+#themafiltertrigger > span {
+	font-family: "transavicon";
+	margin-left: auto; /* Zelfde als float: right; maar dan met flexbox */
+}
+
+/*
+=================================
+	FILTEROPTIE - NIVEAU
+=================================
+*/
+
+/* Fieldset van genre */
+#niveaufilteroptie {
+	background: #FF3268;
+	box-shadow: inset 0 -0.1875em 0.0625em #CA2B55;
+}
+
+#niveaufiltertrigger:hover {
+	background: #FF658E;
+	transition: background 200ms;
+}
+
+/* Icoon van Legend */
+#niveaufiltertrigger > span {
+	font-family: "transavicon";
+	margin-left: auto; /* Zelfde als float: right; maar dan met flexbox */
+}
+
+/*
+=================================
+	FILTEROPTIE - DUUR
+=================================
+*/
+
+/* Fieldset van genre */
+#duurfilteroptie {
+	background: #00D66C;
+	box-shadow: inset 0 -0.1875rem 0.0625rem #1E9162;
+}
+
+#duurfiltertrigger:hover {
+	background: #4DE298;
+	transition: background 200ms;
+}
+
+#duurfilteroptie input {
+	margin-left: 1.25em; /* 20/16 */
+}
+
+/* Icoon van Legend */
+#duurfiltertrigger > span {
+	font-family: "transavicon";
+	margin-left: auto; /* Zelfde als float: right; maar dan met flexbox */
+}
+
+/*
+=================================
+	FILTEROPTIE - ALGEMEEN
+=================================
+*/
+
+#filteropties fieldset {
+	border: none;
+	border-radius: 0.9375em; /* 15/16 */
+	box-sizing: border-box;
+	height: 1.875em; /* 30/16 */
+	margin: 0 0.625em 0 0; /* 10/16 */
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: auto;
+	z-index: 100;
+}
+
+#filteropties legend {
+	border: none;
+	box-shadow: 0 0.125em 0.3125em rgba(0,0,0,0.1);
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: flex;
+	float: left;
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	height: 1.875em; /* 30/16 */
+	margin: 0;
+	padding: 0.2em 0.9375em 0 0.9375em;
+	width: 100%;
+}
+
+/* Labels in het filteroptie formulier */
+#filteropties label {
+	background: rgba(0,0,0,0.1);
+	box-sizing: border-box;
+	clear: left;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: flex;
+	font-family: "nexa_regular";
+	font-size: 1em;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0.9375em; /* 15/16 */
+}
+
+/* Labels in het filteroptie formulier */
+#filteropties label:hover {
+	background: rgba(0,0,0,0.2);
+	transition: background 300ms;
+}
+
+/* Het vinkje achter de filters */
+#filteropties label span {
+	color: rgba(0,0,0,0);
+	font-family: "transavicon";
+	margin-left: 1.25em; /* 20/16 */
+}
+
+#filteropties label span:before {
+	content: "";
+}
+
+/* Het vinkje achter de filters met een hover */
+#filteropties label:hover > span:before {
+	color: rgba(0,0,0,0.2);
+	content: "";
+}
+
+/* Het vinkje achter de filters als hij aangevinkt is */
+#filteropties [type="checkbox"]:checked + span:before {
+	color: #FFFFFF;
+	content: "";
+}
+
+/* Het vinkje achter de filters als hij aangevinkt is en hover */
+#filteropties [type="checkbox"]:checked:hover + span:before {
+	color: #FF3268;
+	content: "";
+}
+
+/* Het vinkje bij de roze drop downs achter de filters als hij aangevinkt is en hover */
+#filteropties [type="checkbox"]:checked:hover + .filterverwijderenalternatief:before {
+	color: #000000;
+}
+
+/* Originele checkbox die weg is */
+#filteropties [type="checkbox"] {
+	display: none;
+}
+
+/*
+=================================
+	MAIN
+=================================
+*/
+
+main, .sectionaanmelden {
+	background: #F7F7F7;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#maincontainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 60em; /* 960/16 */
+	width: 100%;
+}
+
+main h3, .sectionaanmelden h3 {
+	margin: 2.083333333333333em 0 0.8333333333333333em 0; /* 50/16 */ /* 20/16 */
+	width: 100%;
+}
+
+main article, .sectionaanmelden article {
+	background: #FFFFFF;
+	border-radius: 0.3125em; /* 5/16 */
+	box-shadow: 0 0.1875em 0.125em 0 rgba(0,0,0,0.2); /* 3/16 */ /* 2/16 */
+	margin-bottom: 4%;
+	overflow: hidden;
+	position: relative;
+	width: 48%;
+}
+
+main article h2, .sectionaanmelden article h2 {
+	color: #00D66C;
+	margin: 0;
+}
+
+main article .afb, .sectionaanmelden article .afb {
+	background: url(../images/afb3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 9.375em; /* 150/16 */
+	width: 100%;
+}
+
+main article .info, .sectionaanmelden article .info {
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1.875em; /* 30/16 */
+}
+
+main article button, .keuzeredactie button, .sectionaanmelden article button {
+	background: #FFFFFF;
+	border: 0.05555555555555555em solid #979797;
+	border-radius: 0.2777777777777778em;
+	box-shadow: inset 0 -0.16666666666666666em 0.1111111111111111em 0 rgba(0,0,0,0.2);
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	height: 1.6666666666666665em;
+	margin-right: 1.1111111111111112em;
+	order: 0;
+	outline: none;
+	transition: background 300ms;
+	width: 5.888888888888888em;
+}
+
+.leesmeeraanmelden {
+	background: #E1E1E1 !important;
+	border: 1px solid #B9B9B9 !important;
+	box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.10) !important;
+	border-radius: 5px;
+	width: auto !important;
+	color: rgba(0,0,0,0.3) !important;
+}
+
+main article button:hover {
+	background: #F7F7F7;
+}
+
+main article button:active {
+	background: #F7F7F7;
+	box-shadow: inset 0 0.125em 0.125em 0 rgba(0,0,0,0.2); /* 2/16 */ /* 2/16 */
+	padding-top: 0.1875em; /* 3/16 */
+}
+
+main article .datum, .keuzeredactie .datum, .sectionaanmelden article .datum {
+	background: url(../images/kalender.svg);
+	background-position: 100% 40%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	height: 1.6666666666666665em;
+	order: 0;
+	padding-top: 0.2222222222222222em;
+	width: 6.944444444444444em;
+}
+
+main article .waardering, .keuzeredactie .waardering, .sectionaanmelden article .waardering {
+	background: url(../images/hart.svg);
+	background-position: 100% center;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	font-family: "nexa_bold";
+	font-size: 1.125em; /* 18/16 */
+	height: 1.6666666666666665em;
+	margin: 0 1.1111111111111112em 0 auto;
+	order: 0;
+	padding-top: 0.2222222222222222em;
+	width: 3.333333333333333em;
+}
+
+.keuzeredactie {
+	margin-bottom: 0;
+	overflow: visible;
+	width: 100%;
+}
+
+
+.keuzeredactie #stercontainer .afb {
+	align-items: stretch;
+	background: url(../images/afb1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	width: 30%;
+}
+
+.keuzeredactie #stercontainer .info {
+	width: 70%;
+}
+
+.keuzeredactie #stercontainer h2 {
+	color: #FF3268;
+}
+
+#stercontainer {
+	border-radius: 0.3125em;
+	display: flex;
+	overflow: hidden;
+}
+
+#ster {
+	background: #FF3268;
+	border-radius: 0.625em;
+	box-shadow: 0 0.1em 0.1em 0 rgba(255,49,104,0.40);
+	box-sizing: border-box;
+	color: #FFFFFF;
+	font-family: "transavicon";
+	font-size: 2.8125em;
+	height: 1.20em;
+	padding-top: 0.1em;
+	position: absolute;
+	right: 0.25em;
+	text-align: center;
+	top: -0.625em;
+	width: 1.20em;
+}
+
+/*
+=================================
+	FOOTER
+=================================
+*/
+
+footer {
+	background: #F0F0F0;
+	color: #000000;
+	font-family: "nexa_regular";
+	font-size: 1em;
+	padding: 0.9375em 0; /* 15/16 */
+	text-align: center;
+}
+
+
+/*
+=================================
+	BREAKPOINTS
+=================================
+*/
+
+@media screen and (max-width: 62.5em) { /* 1000/16 */
+	/* 956/16 */
+	#maincontainer {
+		padding: 0 2%;
+	}
+
+	#headercontainer {
+		padding: 0 2%;
+	}
+
+	.headeraanmelden {
+		padding-bottom: 4%;
+	}
+
+	#headercontaineraanmelden {
+		padding-right: 2%;
+		padding-left: 2%;
+		box-sizing: content-box;
+	}
+
+	form {
+		padding: 0.625em 2%;
+	}
+}
+
+@media screen and (max-width: 56.25em) { /* 900/16 */
+	.fieldsetaanmelden {
+		width: 44%;
+	}
+
+	.formaanmelden input {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 54.375em) { /* 701/16 */
+	main article button, .sectionaanmelden article button {
+		order: 3;
+	}
+
+	main article .datum, .sectionaanmelden article .datum {
+		margin-right: 0.2222222222222222em;
+		order: 3;
+	}
+
+	main article .waardering, .sectionaanmelden article .waardering {
+		margin: 0 0 0.5555555555555556em 0;
+		order: 2;
+		padding-right: 1.9444444444444444em;
+		text-align: right;
+		width: 100%;
+	}
+
+	form {
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+}
+
+@media screen and (max-width: 43.75em) { /* 700 */
+
+	.fieldsetaanmelden {
+		width: 100%;
+	}
+
+	.verplicht {
+		display: none;
+	}
+
+	.verplichtmobiel {
+		display: block;
+	}
+
+	.fieldsetaanmeldentwee {
+		margin-top: 3em;
+	}
+
+	#logo {
+		background: url(../images/transavia_mobiel_logo.svg);
+		width: 2em; /* 32/16 */
+	}
+	main article, .sectionaanmelden article {
+		display: flex;
+		width: 100%;
+	}
+
+	main article .afb, .sectionaanmelden article .afb {
+		align-items: stretch;
+		background: url(../images/afb3.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: auto;
+		width: 30%;
+	}
+
+	main article .info, .sectionaanmelden article .info {
+		width: 70%;
+	}
+
+	main article button, .keuzeredactie button, .sectionaanmelden article button {
+		order: 0;
+	}
+
+	main article .datum, .keuzeredactie .datum, .sectionaanmelden article .datum {
+		margin-right: 0;
+		order: 0;
+	}
+
+	main article .waardering, .keuzeredactie .waardering, .sectionaanmelden article .waardering {
+		margin: 0 1.1111111111111112em 0 auto;
+		order: 0;
+		padding-right: 0;
+		text-align: left;
+		width: 3.333333333333333em;
+	}
+}
+
+@media screen and (max-width: 37.5em) {
+	main article button, .keuzeredactie button, .sectionaanmelden button {
+		order: 3 !important;
+	}
+
+	main article .datum, .keuzeredactie .datum, .sectionaanmelden article .datum {
+		margin-right: 0.2222222222222222em;
+		order: 3;
+	}
+
+	main article .waardering, .keuzeredactie .waardering, .sectionaanmelden article .waardering {
+		margin: 0 0 0.5555555555555556em 0;
+		order: 2;
+		padding-right: 1.9444444444444444em;
+		text-align: right;
+		width: 100%;
+	}
+
+	header {
+		height: 12.5em; /* 200/16 */
+	}
+
+	aside {
+		height: 3.125em; /* 50/16 */
+	}
+}
+
+@media screen and (max-width: 31.25em) {
+	/* 500/16 */
+	main article, .sectionaanmelden article {
+		display: inline;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+
+	main h3, .sectionaanmelden h3 {
+		margin: 1em 0 0.5em 0;
+	}
+
+	main article .afb, .sectionaanmelden article .afb {
+		height: 9.375em; /* 150/16 */
+		width: 100%;
+	}
+
+	main article .info, .sectionaanmelden article .info {
+		padding: 1.25em; /* 20/16 */
+		width: auto;
+	}
+
+	main article button, .sectionaanmelden article button {
+		/*display: none;*/
+	}
+
+	.keuzeredactie #stercontainer .afb {
+		height: 9.375em; /* 150/16 */
+		width: 100%;
+	}
+
+	.keuzeredactie #stercontainer .info {
+		width: 100%;
+	}
+
+	#stercontainer {
+		display: inline;
+	}
+
+	.keuzeredactie {
+		overflow: hidden;
+	}
+
+	#ster {
+		top: 2.7em;
+	}
+
+	main article button, .keuzeredactie button, .sectionaanmelden article button {
+		order: 0 !important;
+	}
+
+	main article .datum, .keuzeredactie .datum, .sectionaanmelden article .datum {
+		margin-right: 0;
+		order: 0;
+	}
+
+	main article .waardering, .keuzeredactie .waardering, .sectionaanmelden article .waardering {
+		margin: 0 1.1111111111111112em 0 auto;
+		order: 0;
+		padding-right: 0;
+		text-align: left;
+		width: 3.333333333333333em;
+	}
+
+	#logo, nav li, #profielicoon {
+		display: none;
+	}
+
+	.homemobiel, #menumobiel, #zoekenmobiel {
+		display: inline;
+	}
+
+	nav {
+		height: 3.125em; /* 50/16 */
+	}
+
+	nav ul {
+		display: inline;
+		width: auto;
+		align-self: center;
+		margin: 0 auto;
+		color: #00D66C;
+	}
+
+	.active {
+		color: #00D66C;
+	}
+
+	#menumobiel:hover, #zoekenmobiel:hover {
+		color: #2800A0;
+	}
+
+	header {
+		height: 0; /* 50/16 */
+		overflow: hidden;
+	}
+
+	aside {
+		height: 0;
+		overflow: hidden;
+	}
+
+	#headercontainer {
+		padding: 0;
+	}
+
+	header h1 {
+		display: none;
+	}
+
+	.headeraanmelden {
+		padding-top: 0;
+	}
+
+	.headeraanmelden h1 {
+		margin: 0.5em 0 0.2em 0;
+		display: block !important;
+	}
+
+	.headeraanmelden h1:before {
+		content: 'Aanmelden';
+	}
+
+	.formaanmelden {
+		padding: 1.5em;
+	}
+
+	.select2 {
+		margin-top: 0;
+	}
+
+	.select2-selection {
+		border-radius: 0 !important;
+		background: #EEDAC8 !important;
+	}
+
+	.select2-search__field {
+		color: #000 !important;
+	}
+
+	.select2-search__field::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    	color: rgba(0,0,0,0.5);
+	}
+}

@@ -1,105 +1,190 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="utf-8">
     <title>Transavia Verhalen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/select2.min.css" />
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
+<!-- <input id="new-state" type="text" />
+<button type="button" id="btn-add-state">Set state value</button>
+
+<div id="test5" style="height: 50px; width: 50px; background: red;"></div> -->
 
 <body>
     <nav>
-        <div id="logo"></div>
-        <h4>Transavia verhalen</h4>
-        <!-- h4 = Logo tekst -->
+        <a href="index.html"><div id="logo"></div></a>
+        <div id="menumobiel"></div>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="lijst.html">Mijn lijst</a>
-                <li><a href="account.html">Account</a>
+            <li class="homemobiel active">Home</li>
+            <li><a href="lijst.html">Mijn lijst</a></li>
+            <li><a href="account.html">Profiel</a></li>
         </ul>
+        <div id="profielicoon"></div>
+        <div id="zoekenmobiel"></div>
     </nav>
     <header>
-        <h1>Wat wil je lezen?</h1>
-        <input type="search" name="zoeken" placeholder="Zoeken..">
+        <div id="headercontainer">
+            <h1>Wat wil je lezen?</h1>
+            <select class="zoeken form-control select2-hidden-accessible" multiple="" style="width: 100%;">
+                <!-- <option selected="selected">orange</option> -->
+                <option value="politiek">politiek</option>
+            </select>
+        </div>
     </header>
     <aside>
-        <div class="filter">
-            <h5>Genre</h5>
-            <!-- h5 = Filteroptie titel -->
-            <!-- Voor Javascript te activeren met de input checkboxes: http://stackoverflow.com/questions/3197702/html-checkbox-onclick-called-in-javascript
-            
-            http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_button-->
-            <ul>
-                <li>
-                    <input type="checkbox" name="genrefictie">Fictie</li>
-                <li>
-                    <input type="checkbox" name="genrenonfictie">Non-fictie</li>
-                <li>
-                    <input type="checkbox" name="genrepolitiek">Politiek</li>
-                <li>
-                    <input type="checkbox" name="genrereligie">Religie</li>
-                <li>
-                    <input type="checkbox" name="genremedia">Media</li>
-                <li>
-                    <input type="checkbox" name="genresport">Sport</li>
-            </ul>
-        </div>
-        <div class="filter">
-            <h5>Thema</h5>
-            <ul>
-                <li>
-                    <input type="checkbox" name="themakeuzeredactie">Keuze van de redeactie</li>
-                <li>
-                    <input type="checkbox" name="themaverkiezingen">Verkiezingen</li>
-                <li>
-                    <input type="checkbox" name="themasinterklaas">Sinterklaas</li>
-            </ul>
-        </div>
-        <div class="filter">
-            <h5>Niveau</h5>
-            <ul>
-                <li>
-                    <input type="checkbox" name="niveaukinderen">Verhalen voor kinderen</li>
-                <li>
-                    <input type="checkbox" name="niveaujeugd">Verhalen voor de jeugd</li>
-                <li>
-                    <input type="checkbox" name="niveauvolwassenen">Verhalen voor volwassenen</li>
-            </ul>
-        </div>
-        <div class="filter">
-            <h5>Duur</h5>
-            <ul>
-                <li>
-                    <input type="range" name="duur" value="3" min="0" max="3">
-                </li>
-                <!-- http://jsfiddle.net/DB98s/55/ Om met java de waarde te tonen -->
-                <!-- Waardes:   0 = 5 min of korter
+        <!-- Voor Javascript te activeren met de input checkboxes: http://stackoverflow.com/questions/3197702/html-checkbox-onclick-called-in-javascript
+        
+        http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_button-->
+        <form id="filteropties">
+            <fieldset id="genrefilteroptie">
+                <legend id="genrefiltertrigger">Genre<span></span></legend>
+                <label for="genrefictie">Fictie
+                    <input class="hidden" type="checkbox" name="genrefictie" id="genrefictie">
+                    <span></span>
+                </label>
+                <label for="genrenonfictie">Non-fictie
+                    <input type="checkbox" name="genrenonfictie" id="genrenonfictie">
+                    <span></span>
+                </label>
+                <label for="genrepolitiek">Politiek
+                    <input type="checkbox" name="genrepolitiek" id="genrepolitiek">
+                    <span></span>
+                </label>
+                <label for="genrereligie">Religie
+                    <input type="checkbox" name="genrereligie" id="genrereligie">
+                    <span></span>
+                </label>
+                <label for="genremedia">Media
+                    <input type="checkbox" name="genremedia" id="genremedia">
+                    <span></span>
+                </label>
+                <label for="genresport">Sport
+                    <input type="checkbox" name="genresport" id="genresport">
+                    <span></span>
+                </label>
+            </fieldset>
+            <fieldset id="themafilteroptie">
+                <legend id="themafiltertrigger">Thema<span></span></legend>
+                <label for="themakeuzeredactie">Keuze redactie
+                    <input type="checkbox" name="themakeuzeredactie" id="themakeuzeredactie">
+                    <span></span>
+                </label>
+                <label for="themaverkiezingen">Verkiezingen
+                    <input type="checkbox" name="themaverkiezingen" id="themaverkiezingen">
+                    <span></span>
+                </label>
+                <label for="themasinterklaas">Sinterklaas
+                    <input type="checkbox" name="themasinterklaas" id="themasinterklaas">
+                    <span></span>
+                </label>
+            </fieldset>
+            <fieldset id="niveaufilteroptie">
+                <legend id="niveaufiltertrigger">Niveau<span></span></legend>
+                <label for="niveaukinderen">Kinderen
+                    <input type="checkbox" name="niveaukinderen" id="niveaukinderen">
+                    <span class="filterverwijderenalternatief"></span>
+                </label>
+                <label for="niveaujeugd">Jeugd
+                    <input type="checkbox" name="niveaujeugd" id="niveaujeugd">
+                    <span class="filterverwijderenalternatief"></span>
+                </label>
+                <label for="niveauvolwassenen">Volwassenen
+                    <input type="checkbox" name="niveauvolwassenen" id="niveauvolwassenen">
+                    <span class="filterverwijderenalternatief"></span>
+                </label>
+            </fieldset>
+            <fieldset id="duurfilteroptie">
+                <legend id="duurfiltertrigger">Duur<span></span></legend>
+                <label for="duur">Alles
+                    <input type="range" name="duur" id="duur" value="3" min="0" max="3">
+                </label>
+            </fieldset>
+            <!-- http://jsfiddle.net/DB98s/55/ Om met java de waarde te tonen -->
+            <!-- Waardes:   0 = 5 min of korter
                                     1 = 10 min of korter
                                     2 = 15 min of korter
                                     3 = Alles -->
-            </ul>
-        </div>
+        </form>
     </aside>
     <main>
-        <h2>Keuze redactie</h2>
-        <article class="keuzeredactie">
-            <h3>Stijloefening (99) - Verrassing</h3>
-            <div class="datum"></div>
-            <p>Tekst</p>
-            <button>Lees meer</button>
-            <div class="waardering"></div>
-        </article>
-        <h2>Aanbevolen</h2>
-        <article>
-            <h3>Stijloefening (98) - Verrassing</h3>
-            <div class="datum"></div>
-            <p>Tekst</p>
-            <button>Lees meer</button>
-            <div class="waardering"></div>
-        </article>
-        <!-- Hieronder komen meer verhalen (infinite loading of pagination) -->
+        <div id="maincontainer">
+            <h3>Keuze redactie</h3>
+            <article class="keuzeredactie">
+                <div id="stercontainer">
+                    <div class="afb"></div>
+                    <div class="info">
+                        <div id="ster"></div>
+                        <h2>Verrassing</h2>
+                        <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                        <button>Lees meer</button>
+                        <div class="waardering">84</div>
+                        <div class="datum">12 juni 2016</div>
+                    </div>
+                </div>
+            </article>
+            <h3>Aanbevolen voor jou, Naam</h3>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Beroemd</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button>Lees meer</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Beroemd over twee rijen</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button>Lees meer</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Blind</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button>Lees meer</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Blind</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button>Lees meer</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+            <article>
+                <div class="afb"></div>
+                <div class="info">
+                    <h2>Blind</h2>
+                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
+                    <button>Lees meer</button>
+                    <div class="waardering">33</div>
+                    <div class="datum">11 juni 2016</div>
+                </div>
+            </article>
+        </div>
     </main>
     <footer>
-        <p>© Transavia verhalen - 2016</p>
+        © Transavia Verhalen - 2016
     </footer>
 </body>
 
