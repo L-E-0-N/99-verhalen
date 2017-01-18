@@ -5,97 +5,95 @@
     <meta charset="utf-8">
     <title>Aanmelden bij Transavia verhalen</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/javascript.js"></script>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">
-            <div id="logo"></div>
-        </a>
-        <div id="menumobiel"> </div>
-        <ul>
-            <li class="homemobiel active">Home</li>
-            <li><a href="lijst.html">Mijn lijst</a></li>
-            <li><a href="account.html">Profiel</a></li>
-        </ul>
-        <div id="profielicoon"></div>
-        <div id="zoekenmobiel"></div>
+    <nav class="navhome">
+        <div>
+            <a href="index.html">
+                <div>
+                    <!--Logo-->
+                </div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aanmelden.html">Aanmelden</a></li>
+            </ul>
+            <div>
+                <!--Hamburger Menu mobiel-->
+            </div>
+            <p>Aanmelden</p>
+            <div class="geenZoekenMobiel">
+                <!--Zoeken mobiel-->
+            </div>
+        </div>
     </nav>
+    <div class="navmobielhome">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aanmelden.html">Aanmelden</a></li>
+        </ul>
+    </div>
     <header class="headeraanmelden">
-        <div id="headercontaineraanmelden">
-            <h1></h1>
-            <main class="mainaanmelden">
-                <form class="formaanmelden">
-                    <!-- Animatied voor foutmeldingen https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
-                    <fieldset class="fieldsetaanmelden">
-                        <legend>Persoonsgegevens</legend>
-                        <label for="voornaam">Voornaam *</label>
-                        <input type="text" name="voornaam" id="voornaam" placeholder="Voornaam" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" autofocus required>
-                        <label for="tussenvoegsel">Tussenvoegsel</label>
-                        <input type="text" name="tussenvoegsel" id="tussenvoegsel" placeholder="Tussenvoegsel" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters">
-                        <label for="achternaam">Achternaam *</label>
-                        <input type="text" name="achternaam" id="achternaam" placeholder="Achternaam" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" required>
-                        <!-- <label for="geboortedatum">Geboortedatum *</label>
-                        <input type="date" name="geboortedatum" id="geboortedatum" max="2012-01-01" title="01/01/1990" required> -->
-                        <!-- Werkt niet op FF en IE 11 of ouder -->
-                        <label for="telefoonnummer">Telefoonnummer *</label>
-                        <input type="tel" name="telefoonnummer" id="telefoonnummer" placeholder="0612345678" pattern="[0-9]+" minlength="8" maxlength="10" title="Aan elkaar. Tussen de 8 en 10 cijfers" required>
-                        <label for="email">E-mailadres *</label>
-                        <input type="email" name="email" id="email" placeholder="E-mailadres" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
-                        <p class="verplicht">* Deze velden zijn verplicht.</p>
-                    </fieldset>
-                    <fieldset class="fieldsetaanmelden fieldsetaanmeldentwee">
-                        <legend>Adres</legend>
-                        <label for="postcode">Postcode *</label>
-                        <input type="text" name="postcode" id="postcode" placeholder="1234AB" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
-                        <label for="straat">Straat *</label>
-                        <input type="text" name="straat" id="straat" placeholder="Straat" pattern="[A-Za-z]+" minlength="2" title="Twee or meer karakters" required>
-                        <label for="huisnummer">Huisnummer *</label>
-                        <input type="number" name="huisnummer" id="huisnummer" placeholder="Huisnummer" min="1" required>
-                        <label for="toevoeging">Toevoeging</label>
-                        <input type="text" name="toevoeging" id="toevoeging" placeholder="Toevoeging" pattern="[A-Za-z]+" maxlength="2" title="Bijvoorbeeld: 14c">
-                        <label for="wachtwoord">Wachtwoord *</label>
-                        <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord" pattern=".{5,}" title="Vijf or meer karakters" required>
-                        <input type="submit" name="aanmelden" id="aanmelden" value="Aanmelden" />
-                        <p class="verplichtmobiel">* Deze velden zijn verplicht.</p>
-                    </fieldset>
-                    
-                    
-                </form>
-            </main>
+        <div>
+            <form>
+                <fieldset>
+                    <legend>Aanmelden</legend>
+                    <label for="voornaam">Gebruikersnaam</label>
+                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" placeholder="Gebruikersnaam" autofocus required>
+                    <label for="wachtwoord">Wachtwoord</label>
+                    <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord" title="Vijf or meer karakters" required>
+                    <input type="submit" name="aanmelden" value="Aanmelden" />
+                </fieldset>
+            </form>
+            <form>
+                <fieldset>
+                    <legend>Registreren</legend>
+                    <label for="voornaam">Gebruikersnaam *</label>
+                    <input type="text" name="gebruikersnaamregistreren" id="gebruikersnaamregistreren" placeholder="Gebruikersnaam" autofocus required>
+                    <label for="email">E-mailadres *</label>
+                    <input type="email" name="email" id="email" placeholder="E-mailadres" required>
+                    <label for="wachtwoord">Wachtwoord *</label>
+                    <input type="password" name="wachtwoordregistreren" id="wachtwoordregistreren" placeholder="Wachtwoord" title="Vijf or meer karakters" required>
+                    <input type="submit" name="registreren" value="Registreren" />
+                </fieldset>
+            </form>
         </div>
     </header>
-    <section class="sectionaanmelden">
-        <div id="maincontainer">
-            <h3>Interessante verhalen</h3>
-            <article>
-                <div class="afb"></div>
-                <div class="info">
-                    <h2>Blind</h2>
-                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
-                    <button class="leesmeeraanmelden">Aanmelden</button>
-                    <div class="waardering">33</div>
-                    <div class="datum">11 juni 2016</div>
-                </div>
-            </article>
-            <article>
-                <div class="afb"></div>
-                <div class="info">
-                    <h2>Blind</h2>
-                    <p>Vlak voordat ik de bus uitstap bedank ik de buschauffeur via de spiegel voor zijn diensten. Hij zwaait joviaal terug. ‘Mijn vrouw is een groot fan van u’, roept hij. ‘Doe haar de groeten’, zeg ik en stap uit. Centraal Station. Ik duw mijn zoon voort. Hij slaapt. Zich onbewust van de last die er..</p>
-                    <button class="leesmeeraanmelden">Aanmelden</button>
-                    <div class="waardering">33</div>
-                    <div class="datum">11 juni 2016</div>
-                </div>
-            </article>
-        </div>
-    </section>
+    <main class="mainaanmelden">
+        <h3>Interessante verhalen</h3>
+        <article>
+            <div>
+                <!--Afb-->
+            </div>
+            <div>
+                <h2>Alzheimer</h2>
+                <div>84</div>
+                <div>12 juni 2016</div>
+                <p>Ik stap uit, euh… Hoe heet het? Zo’n vervoersdinges op wielen. Van de gemeente. Wit met blauw. Kom. Lijn 12. Of was het 21? Ik weet het niet. Ik stap uit</p>
+                <button>Gauw aanmelden!</button>
+            </div>
+        </article>
+        <article>
+            <div>
+                <!--Afb-->
+            </div>
+            <div>
+                <h2>Blind</h2>
+                <div>102</div>
+                <div>10 juni 2016</div>
+                <p>Piepende remmen, bus 21 komt tot stilstand. De stem van de buschauffeur, naar mij gericht, zakelijk, niet vriendelijk, niet onvriendelijk: ‘Centraal Station,</p>
+                <button>Gauw aanmelden!</button>
+            </div>
+        </article>
+    </main>
     <footer>
         © Transavia Verhalen - 2016
     </footer>
+    <script type="text/javascript" src="js/javascript_aanmelden.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
 </body>
 
 </html>
